@@ -3,6 +3,7 @@
 use Livewire\Volt\Component;
 use App\Models\Article;
 use Livewire\Attributes\Validate;
+use Livewire\Attributes\On;
 
 
 new class extends Component {
@@ -27,8 +28,8 @@ new class extends Component {
             $this->results = Article::where('title','like',$search)->orWhere('body','like',$search)->get();
     }
 
-
-    public function clearTerm(){
+    #[On('search:clear-results')]
+    public function clear(){
         $this->reset('searchTerm','results');
     }
 
@@ -37,8 +38,8 @@ new class extends Component {
 <div class="flex flex-col w-1/2 relative">
     <div class="flex items-center gap-2 my-4 w-full justify-between">
         <input type="text" class="w-full rounded text-gray-600" wire:model.live.debounce="searchTerm" placeholder="Search something..." >
-        <button class="px-4 py-2 border rounded border-gray-500 text-gray-500 hover:bg-indigo-200" 
-        wire:click.prevent="clearTerm" {{empty($searchTerm) ? 'disabled': ''}} >Clear</button>
+        <!-- <button class="px-4 py-2 border rounded border-gray-500 text-gray-500 hover:bg-indigo-200" 
+        wire:click.prevent="clear" {{empty($searchTerm) ? 'disabled': ''}} >Clear</button> -->
     </div>
 
     <div class="absolute w-full top-16 bg-white p-2 border">
