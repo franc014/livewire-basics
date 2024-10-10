@@ -42,6 +42,9 @@ new class extends Component {
     </div>
 
     <div class="absolute w-full top-16 bg-white p-2 border">
+        @error('searchTerm')
+            <p class="text-red-500">{{$message}}</p>
+        @enderror
         <livewire:pages.search.search-results :results="$results" />
     </div>
 

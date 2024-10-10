@@ -23,8 +23,4 @@ new class extends Component {
       <p class="text-yellow-600">No results found</p>
       @endif
     @endif
-    
-    @error('searchTerm')
-        <p class="text-red-500">{{$message}}</p>
-    @enderror
 </div>
