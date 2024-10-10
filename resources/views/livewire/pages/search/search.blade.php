@@ -24,14 +24,18 @@ new class extends Component {
         <input type="search" class="w-full h-14 rounded text-gray-600" wire:model="searchTerm" >
         <button class="px-4 py-2 border h-14 rounded border-gray-500" wire:click="handleSearch" >Search</button>
     </div>
-    <div class="">
+  
     @if($results)
      
+     @if($results->count() > 0)
       <ul class="p-4 border border-gray-500 rounded divide-y divide-gray-200">
         @foreach($results as $result)
             <li class="py-1 px-1" ><a class="text-indigo-600 hover:text-indigo-400" href="/articles/{{$result->id}}">{{$result->title}}</a> </li>
         @endforeach
       </ul>
+     @else
+      <p>No results found</p>
+     @endif
      
     @else
       <p>Write something in the search box</p>
@@ -40,5 +44,5 @@ new class extends Component {
     @error('searchTerm')
         <p class="text-red-500">{{$message}}</p>
     @enderror  
-    </div>  
+ 
 </div>

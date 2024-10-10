@@ -19,7 +19,7 @@ class ArticleFactory extends Factory
     {
         return [
             'title'=> fake()->sentence(),
-            'body'=> fake()->text(),
+            'body'=> fake()->paragraphs(10,true),
         ];
     }
 }
