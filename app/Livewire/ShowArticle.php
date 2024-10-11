@@ -5,8 +5,10 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Article;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 
 #[Layout('layouts.app')]
+#[Title('Article')]
 class ShowArticle extends Component
 {
     public $article;

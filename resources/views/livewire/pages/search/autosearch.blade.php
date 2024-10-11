@@ -42,7 +42,7 @@ new class extends Component {
         wire:click.prevent="clear" {{empty($searchTerm) ? 'disabled': ''}} >Clear</button> -->
     </div>
 
-    <div class="absolute w-full top-16 bg-white p-2 border">
+    <div class="absolute w-full top-16 bg-gray-50 p-2 ">
         @error('searchTerm')
             <p class="text-red-500">{{$message}}</p>
         @enderror

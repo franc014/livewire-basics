@@ -16,7 +16,7 @@ new class extends Component {
       @if($results->count() > 0)
       <ul class="p-4 border border-gray-500 rounded divide-y divide-gray-200 ">
         @foreach($results as $result)
-            <li class="py-1 px-1" ><a wire:navigate class="text-indigo-600 hover:text-indigo-400" href="/articles/{{$result->id}}">{{$result->title}}</a> </li>
+            <li class="py-1 px-1" wire:key="result-{{$result->id}}" ><a wire:navigate class="text-gray-500 hover:text-indigo-400" href="/articles/{{$result->id}}">{{$result->title}}</a> </li>
         @endforeach
       </ul>
       @else

@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 :disabled {
     @apply bg-gray-200 cursor-crosshair;
+}
+
+h2 {
+    @apply font-bold text-xl;
 }
